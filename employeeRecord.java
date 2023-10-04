@@ -16,11 +16,9 @@ class employeeRecord {
     public employeeRecord(String[] data) throws ParseException,NullPointerException {
         this.positionID = data[0];
         this.positionStatus = data[1];
-        // Handle empty date fields gracefully
+        // Handle empty date fields that leads to error
         this.timeIn = parseDate(data[2]);
         this.timeOut = parseDate(data[3]);
-
-
         this.timecardHours = parseTime(data[4]);
         this.payCycleStartDate = data[5];
         this.payCycleEndDate = data[6];
@@ -45,7 +43,7 @@ class employeeRecord {
         int minutes = Integer.parseInt(parts[1]);
         return hours * 60 + minutes;
     }
-
+    // getters and setters
     public String getPositionID() {
         return positionID;
     }

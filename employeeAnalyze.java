@@ -23,12 +23,14 @@ public class employeeAnalyze {
         }
 
         // Implement conditions
+        //set is used  to eliminate the duplicate records in the output
         Set<String> consecutiveDaysEmployees = new HashSet<>();
         Set<String> lessThan10HoursEmployees = new HashSet<>();
         Set<String> moreThan14HoursEmployees = new HashSet<>();
         employeeRecord prevRecord = null;
 
         // Sort records by employee name and date
+        // sort function is used to arrange the records in the chronological order and will be easier to find output
         records.sort(Comparator.nullsFirst(
                 Comparator.comparing(employeeRecord::getEmployeeName)
                         .thenComparing(employeeRecord::getTimeIn, Comparator.nullsFirst(Comparator.naturalOrder()))
@@ -77,7 +79,6 @@ public class employeeAnalyze {
         {
             System.out.println(e.getMessage());
         }
-        // Condition a: Print employees who worked for 7 consecutive days
 
     }
 }
