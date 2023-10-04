@@ -62,7 +62,7 @@ public class employeeAnalyze {
 
                 prevRecord = record;
             }
-
+            // writing the output into the output.text
             writer.println("Employees who worked for 7 consecutive days:");
             consecutiveDaysEmployees.forEach(name -> writer.println(name));
 
